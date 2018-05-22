@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
 	<bean id="msgSrc" class="com.kimcatt.spring.helloworld.repository.impl.MessageSourceImpl">
 		<!-- collaborators and configuration for this bean go here -->
 	</bean>
@@ -10,5 +11,6 @@
 		<!-- collaborators and configuration for this bean go here -->
 		<property name="messageSource" ref="msgSrc"></property>
 	</bean>
-	<!-- more bean definitions go here -->
+	
+	
 </beans>
