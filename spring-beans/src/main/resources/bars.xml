@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="false">
+	
+	<bean id="id" class="java.lang.String" >
+		<constructor-arg>
+			<value>102</value>
+		</constructor-arg>
+	</bean>
+	<bean id="id2" class="java.lang.String" >
+		<constructor-arg>
+			<value>104</value>
+		</constructor-arg>
+	</bean>
+	<bean id="type" class="java.lang.String" >
+		<constructor-arg>
+			<value>classic</value>
+		</constructor-arg>
+	</bean>
+	<bean id="type2" class="java.lang.String" >
+		<constructor-arg>
+			<value>modern</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="bar" class="examples.Bar" c:id-ref="id" c:type-ref="type">
+		
+	</bean>
+	<bean id="bar2" class="examples.Bar" c:_0-ref="id2" c:_1-ref="type2">
+		
+	</bean>
+	
+	
+</beans>

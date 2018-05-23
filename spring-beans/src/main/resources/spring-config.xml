@@ -12,14 +12,8 @@
 		<property name="messageSource" ref="msgSrc"></property>
 	</bean>
 	 -->
-	<bean id="exampleBean" class="example.ExampleBean">
-		<constructor-arg type="int" value="750000"></constructor-arg>
-		<constructor-arg type="java.lang.String" value="42"></constructor-arg>
-	</bean>
-	
-	<bean id="exampleBean2" class="example.ExampleBean">
-		<constructor-arg index="0" value="250000"></constructor-arg>
-		<constructor-arg index="1" value="58"></constructor-arg>
-	</bean>
-	
+	<import resource="exampleBeans.xml"/>
+	<import resource="foos.xml"></import>
+	<import resource="bars.xml"></import>
+	<import resource="lifecycleBeans.xml"/>
 </beans>

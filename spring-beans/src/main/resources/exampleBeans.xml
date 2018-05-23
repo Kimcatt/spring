@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 	
+	<bean id="msgSrc" class="com.kimcatt.spring.helloworld.repository.impl.MessageSourceImpl">
+		collaborators and configuration for this bean go here
+	</bean>
+	<bean id="messagePrinter" class="com.kimcatt.spring.helloworld.service.impl.MessagePrinterImpl">
+		collaborators and configuration for this bean go here
+		<property name="messageSource" ref="msgSrc"></property>
+	</bean>
+	 -->
+	<bean id="exampleBean" class="examples.ExampleBean">
+		<constructor-arg type="int" value="750000"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="42"></constructor-arg>
+	</bean>
+	
+	<bean id="exampleBean2" class="examples.ExampleBean">
+		<constructor-arg index="0" value="250000"></constructor-arg>
+		<constructor-arg index="1" value="58"></constructor-arg>
+	</bean>
+	
+	<bean id="exampleBean3" class="examples.ExampleBean">
+		<constructor-arg name="years" value="500000"></constructor-arg>
+		<constructor-arg name="ultimateAnswer" value="50"></constructor-arg>
+	</bean>
+	
+</beans>
