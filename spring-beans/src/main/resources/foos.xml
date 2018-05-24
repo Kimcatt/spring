@@ -6,12 +6,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="foo" class="examples.Foo" >
+	<bean id="foo" class="examples.Foo" scope="prototype">
 		<property name="x" value="tom"></property>
 		<property name="y" value="jerry" ></property>
 	</bean>
 	
-	<bean id="foo2" class="examples.Foo" p:x="kim" p:y="john">
+	<bean id="foo2" class="examples.Foo" p:x="kim" p:y="john" scope="prototype">
 		
 	</bean>
 	

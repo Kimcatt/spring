@@ -8,7 +8,7 @@
 	default-lazy-init="false">
 	
 	
-	<bean id="lifecycleBean" class="examples.LifecycleBean" c:id="103">
+	<bean id="lifecycleBean" class="examples.LifecycleBean" c:id="103" init-method="init" destroy-method="dispose">
 		<property name="name" value="kimcat"></property>
 	</bean>
 	

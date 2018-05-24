@@ -27,7 +27,7 @@ public class Foo {
 
 	@Override
 	public String toString() {
-		return "x:" + x + ",y:" + y;
+		return "hash:" + this.hashCode() +",x:" + x + ",y:" + y;
 	}
 	
 	
