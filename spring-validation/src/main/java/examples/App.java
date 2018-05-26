@@ -1,40 +1,35 @@
 package examples;
 
-import java.util.List;
+import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
-import org.springframework.validation.BindException;
-import org.springframework.validation.FieldError;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 /**
+ * Spring Validation
+ * 
  * @author kimcatt
- * @date 2018年5月24日 下午10:05:19
+ * @date 2018年5月26日 下午7:41:27
  * @since JDK 1.7
  */
-@Component
 public class App {
-	
-	@Autowired(required = true)
-	private Person person;
-	
-	@Autowired(required = true)
-	private PersonValidator personValidator; 
-	
-	public void validate() {
-		BindException errors = new BindException(person, "person");
-		personValidator.validate(person, errors);
-		List<FieldError> fieldErrors = errors.getFieldErrors();
-		for (FieldError error : fieldErrors) {
-			System.out.println(error.getField() + ":" + error.getRejectedValue() + ":" + error.getCode());
-		}
-	}
-	
 	public static void main(String[] args) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
-		App app = ctx.getBean(App.class);
-		app.validate();
+
+		// Validator validator = Validation
+		//      .byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory().getValidator();
+		// Validator validator =
+		// Validation.buildDefaultValidatorFactory().getValidator();
+		Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+		Set<ConstraintViolation<Foo>> set = validator.validate(new Foo("lowerCase", "stub"));
+		for (ConstraintViolation<Foo> constraintViolation : set) {
+			System.out.println(constraintViolation.getMessage());
+		}
+		
+		set = validator.validate(new Foo(null, "stub"));
+		for (ConstraintViolation<Foo> constraintViolation : set) {
+			System.out.println(constraintViolation.getMessage());
+		}
+
 	}
 }
